@@ -7,6 +7,10 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/fixos.css">
+        <script src="js/redirect.js" async defer></script>
+        <script src="js/animacao-carrinho.js" async defer></script>
+        <script  src="js/contador.js"></script>
         <!--IMPORTAÇÃO DE ICON-->
         <script src="https://kit.fontawesome.com/6934df05fc.js" crossorigin="anonymous"></script>
     </head>
@@ -14,7 +18,12 @@
         <header>
             <i class="fa-solid fa-bars"></i>
             <h1>BENTEZ</h1>
-            <i class="fa-solid fa-cart-shopping"></i>
+            <div class="cart-container">
+                <a href="paginas/carrinho.html">
+                    <i class="fa-solid fa-cart-shopping" id="cartIcon"></i>
+                </a>
+                <span id="cartCount" class="cart-count">0</span> <!-- Contador de itens -->
+            </div>
         </header>
         <div class="container-introducao">
             <div class="imagem-introducao"></div>
@@ -41,6 +50,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="container-ofertas">
+            <a href="paginas/acai-500ml.html">acai-500</a>
         </div>
         <script src="" async defer></script>
     </body>
