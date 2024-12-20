@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+header {
+    margin: 0;
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url("../assets/images/banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0 0 5px 5px;
+}
+.main-horizontal {
+    width: 100vw;
+    height: 10vh;
+    background-color: rgba(0, 0, 0, 0.122);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    box-shadow: 0 0 3px black;
+}
+.logo-main-horizontal {
+    width: 70%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: first baseline;
+    align-items: center;
+}
+.logo {
+    width: 5vw;
+    height: 7vh;
+    background-image: url("../assets/images/logo.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
+}
+.options-main-horizontal {
+    width: 20%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.info-menu {
+    width: 50%;
+    height: 10vh;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.carrinho {
+    width: 10%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(35, 0, 67);
+    border-radius: 30px 0 0 30px;
+}
