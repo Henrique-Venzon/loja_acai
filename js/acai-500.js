@@ -1,5 +1,3 @@
-// acai-500.js
-
 document.addEventListener('DOMContentLoaded', function () {
     const basePrice = 20;
     const totalPriceElement = document.getElementById('totalPrice');
