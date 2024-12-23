@@ -94,7 +94,7 @@ header {
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.carrinho {
+.cart-container {
     z-index: 1;
     width: 10%;
     height: 10vh;
@@ -106,7 +106,7 @@ header {
     border-radius: 30px 0 0 30px;
     transition: 1s;
 }
-.carrinho:hover {
+.cart-container:hover {
     transition: 1s;
     background-color: rgb(39, 0, 78);
 }
@@ -114,4 +114,32 @@ main {
     width: 100vw;
     height: auto;
     min-height: 100vh;
+}
+.cart-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+ /* Contêiner do carrinho */
+ .cart-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Contador de itens */
+.cart-count {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    background-color: #ff0000;
+    color: white;
+    font-size: 1.5vh;
+    font-weight: bold;
+    padding: 0.2em 0.6em;
+    border-radius: 50%;
+    display: none;
+    z-index: 10;
+    transition: transform 0.3s ease; /* Efeito de transformação */
 }
