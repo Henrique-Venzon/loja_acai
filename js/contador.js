@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cartCountElement.textContent = cartCount;
 
         if (cartCount > 0) {
-            cartCountElement.style.display = 'inline'; // Exibe o contador
+            cartCountElement.style.display = 'flex'; // Exibe o contador
         } else {
             cartCountElement.style.display = 'none'; // Oculta o contador
         }
