@@ -7,9 +7,21 @@ body {
     max-width: 100vw;
     overflow-x: hidden;
 }
-body {
-    scrollbar-width: thin; /* Largura da barra: auto, thin ou none */
-    scrollbar-color: #888 #f4f4f4; /* Cor do thumb e do track */
+body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgb(39, 1, 75);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(35, 0, 67);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: rgb(56, 1, 107);
 }
 header {
     margin: 0;
