@@ -18,16 +18,15 @@ header {
     background-image: url("../assets/images/banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
     border-radius: 0 0 5px 5px;
 }
 .main-horizontal {
     width: 100vw;
     height: 10vh;
-    background-color: rgba(0, 0, 0, 0.122);
+    background-color: rgba(0, 0, 0, 0.329);
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     box-shadow: 0 0 3px black;
 }
 .logo-main-horizontal {
@@ -48,12 +47,27 @@ header {
     filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
 }
 .options-main-horizontal {
-    width: 20%;
+    width: 17%;
     height: 10vh;
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: rgb(47, 1, 91);
+    left: 3vw;
+    border-radius: 30px 0 0 30px;
+}
+.contato-container {
+    width: 50%;
+    height: 10vh;
+    background-color: rgb(39, 1, 75);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px 0 0 30px;
 }
 .info-menu {
     width: 50%;
@@ -67,6 +81,7 @@ header {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .carrinho {
+    z-index: 1;
     width: 10%;
     height: 10vh;
     display: flex;
