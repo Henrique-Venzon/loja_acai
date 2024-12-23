@@ -11,21 +11,21 @@ background: linear-gradient(9deg, rgba(0,0,0,1) 0%, rgb(26, 0, 53) 50%, rgba(45,
     justify-content: flex-start;
     align-items: first baseline;
     box-shadow: 0 0 2px rgb(129, 0, 129);
-    animation: punch 1.5s ease-out; /* Aplica a animação */
+    animation: punch 1.5s ease-out;
 }
 
 @keyframes punch {
     0% {
-        transform: scale(0.0); /* Começa menor */
+        transform: scale(0.0);
     }
     50% {
-        transform: scale(1.08); /* Aumenta de tamanho, o "soco" */
+        transform: scale(1.08);
     }
     70% {
-        transform: scale(1.04); /* Diminui um pouco */
+        transform: scale(1.04);
     }
     100% {
-        transform: scale(1); /* Volta ao tamanho original */
+        transform: scale(1);
     }
 }
 
