@@ -106,3 +106,8 @@ header {
     transition: 1s;
     background-color: rgb(39, 0, 78);
 }
+main {
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+}
