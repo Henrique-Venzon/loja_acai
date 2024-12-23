@@ -1,29 +1,39 @@
+const cartContainer = document.getElementById('cartContainer');
+const cartCountElement = document.getElementById('cartCount');
+
+// Função para salvar o carrinho no localStorage
+function saveCart(cart) {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Função para carregar o carrinho
 function loadCart() {
-    const cartContainer = document.getElementById('cartContainer');
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
     if (cart.length === 0) {
         cartContainer.innerHTML = '<p>Seu carrinho está vazio.</p>';
+        cartCountElement.textContent = 0;
         return;
     }
 
     let cartHTML = '';
     let total = 0;
+    let totalCount = 0; // Variável para contar a quantidade total de itens
 
     cart.forEach((item, index) => {
         const adicionais = item.adicionais.map(a => `${a.name} (+R$ ${a.price.toFixed(2)})`).join(', ') || 'Nenhum';
         cartHTML += `
-            <div class="cart-item" id="item-${index}">
+            <div class="cart-item">
                 <strong>${item.name}</strong> - R$ ${item.price.toFixed(2)}
                 <br>Adicionais: ${adicionais}
+                <br>Quantidade: ${item.quantity}
                 <div class="quantity-controls">
-                    <button class="decrease" onclick="changeQuantity(${index}, -1)">-</button>
-                    <span class="quantity">${item.quantity}</span>
-                    <button class="increase" onclick="changeQuantity(${index}, 1)">+</button>
+                    <button class="btn-minus" data-index="${index}">-</button>
+                    <button class="btn-plus" data-index="${index}">+</button>
                 </div>
             </div>
         `;
-        total += item.price * item.quantity;
+        total += item.price * item.quantity; // Calcula o total baseado na quantidade
+        totalCount += item.quantity; // Soma a quantidade de itens
     });
 
     cartHTML += `<div class="cart-total">Total: R$ ${total.toFixed(2)}</div>`;
@@ -35,28 +45,51 @@ function loadCart() {
     `;
     cartContainer.innerHTML = cartHTML;
 
-    document.getElementById('clearCart').addEventListener('click', clearCart);
+    // Atualiza o contador de itens no cabeçalho
+    cartCountElement.textContent = totalCount;
+
+    // Adiciona eventos para os botões de mais e menos
+    document.querySelectorAll('.btn-plus').forEach(button => {
+        button.addEventListener('click', function() {
+            const index = button.getAttribute('data-index');
+            updateItemQuantity(index, 1); // Incrementa a quantidade
+        });
+    });
+
+    document.querySelectorAll('.btn-minus').forEach(button => {
+        button.addEventListener('click', function() {
+            const index = button.getAttribute('data-index');
+            updateItemQuantity(index, -1); // Decrementa a quantidade
+        });
+    });
+
+    // Evento para limpar o carrinho
+    document.getElementById('clearCart').addEventListener('click', () => {
+        localStorage.removeItem('cart');
+        loadCart();
+    });
 }
 
-function changeQuantity(index, delta) {
+// Função para atualizar a quantidade do item
+function updateItemQuantity(index, delta) {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Atualiza a quantidade do item
     const item = cart[index];
     item.quantity += delta;
-    
+
+    // Se a quantidade for 0 ou negativa, remove o item do carrinho
     if (item.quantity <= 0) {
-        cart.splice(index, 1); // Remove item do carrinho se a quantidade for 0
+        cart.splice(index, 1);
+    } else {
+        cart[index] = item;
     }
 
-    localStorage.setItem('cart', JSON.stringify(cart));
-    loadCart(); // Recarrega o carrinho
+    // Salva o carrinho atualizado
+    saveCart(cart);
 
-    // Atualiza o contador de itens no carrinho
-    updateCartCount();
-}
-
-function clearCart() {
-    localStorage.removeItem('cart');
-    loadCart(); // Atualiza o carrinho após limpar
+    // Recarrega o carrinho
+    loadCart();
 }
 
 document.addEventListener('DOMContentLoaded', loadCart);
