@@ -1,82 +1,147 @@
-.container-introducao{
-    margin-top: 3vh;
-    height: 50vh;
-    width: 100%;
+.container-destaque {
+    width: 500px;
+    height: 400px;
+    margin-top: 5vh;
+    margin-left: 30vw;
+    background: rgb(0,0,0);
+background: linear-gradient(9deg, rgba(0,0,0,1) 0%, rgb(26, 0, 53) 50%, rgba(45,0,88,1) 100%);
+    border-radius: 10px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-}
-.imagem-introducao{
-    border-radius: 30px 30px 0 0;
-    width: 85%;
-    height: 100%;
-    background-image: url('../assets/images/acai.webp');
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    background-position: center; 
-}
-.centralizar-cards{
-    position: absolute;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 35vh;
-}
-.card-1,.card-2,.card-3{
-    width: 200px;
-    height: 230px;
-    border-radius: 15px;
-    background-color: #ffffff;
-    overflow: hidden;
-    position: relative; 
-    box-shadow: 0 0 8px #fff;
+    justify-content: flex-start;
+    align-items: first baseline;
+    box-shadow: 0 0 2px rgb(129, 0, 129);
+    animation: punch 1.5s ease-out; /* Aplica a animação */
 }
 
-.txt {
-    height: 60px;
+@keyframes punch {
+    0% {
+        transform: scale(0.0); /* Começa menor */
+    }
+    50% {
+        transform: scale(1.08); /* Aumenta de tamanho, o "soco" */
+    }
+    70% {
+        transform: scale(1.04); /* Diminui um pouco */
+    }
+    100% {
+        transform: scale(1); /* Volta ao tamanho original */
+    }
+}
+
+.moldura {
+    width: 79%;
+    height: 5vh;
+    background: rgb(45,0,88);
+    background: linear-gradient(338deg, rgba(45,0,88,1) 0%, rgba(73,0,70,1) 78%, rgba(0,0,0,1) 100%);
+    border-radius: 30px 100px 100px 0;
+    border: 1ox black;
+}
+.titulo-destaque {
+    width: 93%;
+    height: 7vh;
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
     display: flex;
+    flex-direction: row;
+    justify-content: first baseline;
     align-items: center;
-    justify-content: center;
-    font-size: 1.2em;
 }
-
-.card-imagem {
-    height: 170px;
-    width: 100%;
-    background-image: url('../assets/images/acai.webp');
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    background-position: center; 
+.desc-destaque {
+    width: 92.5%;
+    height: 20vh;
+    text-align: justify;
+    color: rgba(255, 255, 255, 0.759);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: first baseline;
+    align-items: center;
+    position: relative;
     overflow: hidden;
 }
-
-/* Estilizando o texto escondido */
-.texto-subir {
+.desc-destaque::after {
+    content: '';
     position: absolute;
-    bottom: -170px; /* Começa fora do card */
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 170px;
-    padding: 5px 10px;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.7); /* Fundo escuro com opacidade */
-    color: #ffffff; /* Texto branco */
+    height: 4rem;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(20, 0, 37, 0.689) 100%);
+    pointer-events: none;
+}
+.container-buttom-destaque {
+    width: 100%;
+    height: 12vh;
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
-    transform: translateY(0); /* Inicialmente sem deslocamento */
-    transition: transform 0.3s ease, bottom 0.3s ease; /* Suaviza o movimento */
+    align-items: center;
+}
+.pulsating-button {
+    background-color: rgb(35, 0, 66);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    width: 10vw;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(47, 1, 91, 0.5);
+    transition: background-color 1s ease;
+    animation: pulse 2s infinite;
 }
 
-.card-1:hover .texto-subir,.card-2:hover .texto-subir ,.card-3:hover .texto-subir  {
-    transform: translateY(0px);
-    bottom: 0; 
+.pulsating-button:hover {
+    background-color: rgb(56, 1, 107);
 }
-.container-ofertas{
-    width: 100%;
-    height: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: end;
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(47, 1, 91, 0.5);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(47, 1, 91, 0.7);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(47, 1, 91, 0.5);
+    }
 }
+.typing-animation {
+    display: inline-block; /* Necessário para controle da largura */
+    overflow: hidden; /* Oculta o texto fora da área visível */
+    white-space: nowrap; /* Impede quebra de linha */
+    border-right: 2px solid rgba(255, 255, 255, 0.75); /* Simula o cursor */
+    animation: typing 4s steps(20, end), blink 0.5s step-end 4s; /* Animações encadeadas */
+    animation-fill-mode: forwards; /* Garante que o estado final seja preservado */
+}
+
+/* Animação de digitação */
+@keyframes typing {
+    from {
+        width: 0; /* Começa oculto */
+    }
+    to {
+        width: 100%; /* Revela todo o texto */
+    }
+}
+
+/* Animação do cursor piscando */
+@keyframes blink {
+    50% {
+        border-color: transparent; /* Cursor desaparece */
+    }
+    100% {
+        border-color: rgba(255, 255, 255, 0.75); /* Cursor reaparece */
+    }
+}
+
