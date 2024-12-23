@@ -230,8 +230,8 @@ main {
     color: white;
     font-size: 1.5vh;
     font-weight: bold;
-    width: 2.5em; /* Garantindo largura fixa */
-    height: 2.5em; /* Garantindo altura fixa igual à largura */
+    width: 2em; /* Garantindo largura fixa */
+    height: 2em; /* Garantindo altura fixa igual à largura */
     border-radius: 50%; /* Torna o elemento circular */
     display: none;
     justify-content: center;
