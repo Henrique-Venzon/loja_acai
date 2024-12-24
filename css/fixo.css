@@ -257,6 +257,7 @@ main {
     transition: transform 0.3s ease;
 }
 footer {
+    box-shadow: 0 0 1px black;
     margin-top: 40px;
     width: 100vw;
     height: auto;
