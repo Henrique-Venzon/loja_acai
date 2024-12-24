@@ -136,6 +136,23 @@ main {
     justify-content:center;
     flex-wrap: wrap;
     align-items: first baseline;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fade-in 1.5s ease-out forwards;
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 .card {
     width: 300px;
@@ -215,14 +232,12 @@ main {
     align-items: center;
 }
 
- /* Contêiner do carrinho */
  .cart-container {
     position: relative;
     display: flex;
     align-items: center;
 }
 
-/* Contador de itens */
 .cart-count {
     position: absolute;
     top: 10px;
@@ -242,6 +257,7 @@ main {
     transition: transform 0.3s ease;
 }
 footer {
+    margin-top: 40px;
     width: 100vw;
     height: auto;
     background: rgb(0,0,0);
