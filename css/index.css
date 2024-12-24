@@ -117,31 +117,29 @@
     }
 }
 .typing-animation {
-    display: inline-block; /* Necessário para controle da largura */
-    overflow: hidden; /* Oculta o texto fora da área visível */
-    white-space: nowrap; /* Impede quebra de linha */
-    border-right: 2px solid rgba(255, 255, 255, 0.75); /* Simula o cursor */
-    animation: typing 4s steps(20, end), blink 0.5s step-end 4s; /* Animações encadeadas */
-    animation-fill-mode: forwards; /* Garante que o estado final seja preservado */
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    animation: typing 4s steps(20, end), blink 0.5s step-end 4s;
+    animation-fill-mode: forwards;
 }
 
-/* Animação de digitação */
 @keyframes typing {
     from {
-        width: 0; /* Começa oculto */
+        width: 0;
     }
     to {
-        width: 100%; /* Revela todo o texto */
+        width: 100%;
     }
 }
 
-/* Animação do cursor piscando */
 @keyframes blink {
     50% {
-        border-color: transparent; /* Cursor desaparece */
+        border-color: transparent;
     }
     100% {
-        border-color: rgba(255, 255, 255, 0.75); /* Cursor reaparece */
+        border-color: rgba(255, 255, 255, 0.75);
     }
 }
 
